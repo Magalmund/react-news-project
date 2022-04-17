@@ -1,0 +1,43 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.App {
+	width:800px;
+
+}
+
+.post {
+	display: flex;
+	padding: 15px;
+	border: 2px solid teal;
+	margin-top: 15px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.post_btns{
+	display: flex;
+}
+
+.navbar {
+	height: 50px;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	padding: 0 15px;
+	background: lightgray
+}
+
+.navbar_links {
+	margin-left: auto
+}
