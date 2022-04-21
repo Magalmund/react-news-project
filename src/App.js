@@ -13,7 +13,7 @@ function App() {
 		if(localStorage.getItem('auth')){
 			setIsAuth(true)
 		}
-		setLoading(false);
+			setLoading(false);
 	}, [])
 
 	return (

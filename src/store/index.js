@@ -4,8 +4,8 @@ import {emailReducer} from "./emailReducer";
 import {composeWithDevTools} from "redux-devtools-extension";
 
 const rootReducer = combineReducers({
-	api: apiReducer,
-	email: emailReducer,
+	apiState: apiReducer,
+	emailState: emailReducer,
 })
 
 export const store = createStore(rootReducer, composeWithDevTools());

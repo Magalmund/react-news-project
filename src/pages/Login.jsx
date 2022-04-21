@@ -7,35 +7,28 @@ import { addApiAction } from '../store/apiReducer'
 import { addEmailAction } from '../store/emailReducer'
 
 const Login = () => {
-	// const {isAuth, setIsAuth} = useContext(AuthContext);
-	// const login = event => {
-	// 	event.preventDefault();
-	// 	setIsAuth(true)
-	// 	localStorage.setItem('auth', 'true')
-	// }
-
-	const preventD = event => {
+	const {isAuth, setIsAuth} = useContext(AuthContext);
+	const login = event => {
 		event.preventDefault();
+		setIsAuth(true)
+		localStorage.setItem('auth', 'true')
 	}
 	const [apiInput, setApiInput] = useState('');
 	const [emailInput, setEmailInput] = useState('');
 	const addUserData = () => {
 		dispatch(addApiAction(apiInput))
 		dispatch(addEmailAction(emailInput))
-		console.log(api);
-		console.log(email);
 	}
 
 	const dispatch = useDispatch()
-	const api = useSelector(state => state.api)
-	const email = useSelector(state => state.email)
-	console.log(api);
-	console.log(email);
+	const api = useSelector(state => state.apiState)
+	const email = useSelector(state => state.emailState)
+	localStorage.setItem('api', api.api);
+	localStorage.setItem('email', email.email);
 	return (
 		<div>
 				<h1>Login</h1>
-				{/* <form onSubmit={login}></form> */}
-				<form onSubmit={preventD}>
+				<form onSubmit={login}>
 					<MyInput
 						value={emailInput}
 						onChange={e => setEmailInput(e.target.value)}

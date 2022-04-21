@@ -9,6 +9,8 @@ const Profile = () => {
 		setIsAuth(false);
 		localStorage.removeItem('auth')
 	}
+
+
 	return (
 		<div>
 			<Link to="/posts">Posts</Link>
