@@ -2,9 +2,10 @@ import React, { useContext, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MyButton from '../components/UI/button/MyButton';
 import MyInput from '../components/UI/input/MyInput';
+import '../styles/Login.css'; 
 import { AuthContext } from '../context';
-import { addApiAction } from '../store/apiReducer'
-import { addEmailAction } from '../store/emailReducer'
+import { addApiAction } from '../store/apiReducer';
+import { addEmailAction } from '../store/emailReducer';
 
 const Login = () => {
 	const {isAuth, setIsAuth} = useContext(AuthContext);
@@ -26,7 +27,8 @@ const Login = () => {
 	localStorage.setItem('api', api.api);
 	localStorage.setItem('email', email.email);
 	return (
-		<div>
+		<div className="login">
+			<div className="login_content">
 				<h1>Login</h1>
 				<form onSubmit={login}>
 					<MyInput
@@ -45,6 +47,7 @@ const Login = () => {
 					</MyInput>
 					<MyButton onClick={() => addUserData()}>Enter</MyButton>
 				</form>
+			</div>
 		</div>
 	);
 };
