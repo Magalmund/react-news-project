@@ -6,6 +6,7 @@ import '../styles/Login.css';
 import { AuthContext } from '../context';
 import { addApiAction } from '../store/apiReducer';
 import { addEmailAction } from '../store/emailReducer';
+import { updateProfile } from '../store/profileReducer';
 
 const Login = () => {
 	const {isAuth, setIsAuth} = useContext(AuthContext);
@@ -26,6 +27,8 @@ const Login = () => {
 	const email = useSelector(state => state.emailState)
 	localStorage.setItem('api', api.api);
 	localStorage.setItem('email', email.email);
+	dispatch(updateProfile({email: email.email,
+	api: api.api}))
 	return (
 		<div className="login">
 			<div className="login_content">

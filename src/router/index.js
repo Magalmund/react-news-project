@@ -8,7 +8,7 @@ import Login from "../pages/Login";
 export const privateRoutes = [
     {name: '/about', component: <About/>, exact: true},
     {name: '/posts', component: <Posts/>, exact: true},
-    {name: '/posts/:id', component: <PostIdPage/>, exact: true},
+    {name: '/post', component: <PostIdPage/>, exact: true},
     {name: '/profile', component: <Profile/>, exact: true},
 ]
 
