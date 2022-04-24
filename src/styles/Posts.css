@@ -1,0 +1,19 @@
+.posts {
+	padding: 100px 50px
+}
+
+.posts_content_pd:first-child {
+	padding: 100px 50px 50px 50px;
+}
+
+.posts_content_pd {
+	padding: 50px;
+}
+
+.posts_content_pd:last-child {
+	padding: 50px 50px 100px 50px;
+}
+
+.posts button {
+	width:100%;
+}

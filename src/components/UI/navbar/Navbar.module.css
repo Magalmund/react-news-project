@@ -5,7 +5,8 @@
 	display: flex;
 	align-items: center;
 	padding: 0 15px;
-	background: transparent
+	background: #fff;
+	z-index: 3;
 }
 
 .navbar_links {

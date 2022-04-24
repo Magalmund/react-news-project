@@ -4,6 +4,10 @@
 	box-sizing: border-box;
 }
 
+html, body, #root {
+	height: 100%
+}
+
 /*FONTS*/
 @font-face {
 	font-family: Lora;
@@ -13,14 +17,24 @@
 	font-family: Murecho;
 	src: url('../fonts/Murecho/Murecho-Light.ttf') format('truetype')
 }
+
+/*FONTS-END*/
+
+
 h1, h2, h3 {
 	font-family: Lora
 }
 a, span, p, input, textarea {
 	font-family: Murecho
 }
-/*FONTS-END*/
 
+h1 {
+	text-align: center;
+	font-size: 40px;
+	letter-spacing: 15px;
+	text-transform: uppercase;
+	width:100%
+}
 
 @keyframes morph {
 	0% {
@@ -63,22 +77,9 @@ a, span, p, input, textarea {
 	transform-origin: 20% 20%
  }
 
-.App {
-	width:800px;
 
-}
 
-.post {
-	display: flex;
-	padding: 15px;
-	border: 2px solid teal;
-	margin-top: 15px;
-	justify-content: space-between;
-	align-items: center;
-}
 
-.post_btns{
-	display: flex;
-}
+
 
 

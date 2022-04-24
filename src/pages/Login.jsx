@@ -29,6 +29,7 @@ const Login = () => {
 	localStorage.setItem('email', email.email);
 	dispatch(updateProfile({email: email.email,
 	api: api.api}))
+
 	return (
 		<div className="login">
 			<div className="login_content">
@@ -48,7 +49,7 @@ const Login = () => {
 						placeholder="API key"
 					>
 					</MyInput>
-					<MyButton onClick={() => addUserData()}>Enter</MyButton>
+					<MyButton disabled={!emailInput && !apiInput} onClick={() => addUserData()}>Enter</MyButton>
 				</form>
 			</div>
 		</div>

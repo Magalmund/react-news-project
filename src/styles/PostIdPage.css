@@ -1,0 +1,21 @@
+.post_full {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.post_full_content {
+	display: block;
+	width: 75%;
+}
+
+.post_full_content h2 {
+	font-size: 40px;
+	margin: 0 0 30px 0;
+}
+
+.post_full_content p {
+	width: 50%;
+	margin: 0 0 30px 0;
+}

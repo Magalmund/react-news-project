@@ -1,11 +1,11 @@
 import React, { useContext, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import PostService from '../API/PostService';
 import MyButton from '../components/UI/button/MyButton';
 import MyInput from '../components/UI/input/MyInput';
 import { AuthContext } from '../context';
 import { updateProfile } from '../store/profileReducer';
+import "../styles/Profile.css"
 
 const Profile = () => {
 	const {isAuth, setIsAuth} = useContext(AuthContext);
@@ -22,40 +22,45 @@ const Profile = () => {
 	const dispatch = useDispatch()
 
 	return (
-		<div>
-			<Link to="/posts">Posts</Link>
-			<h1>Hi You are logged in</h1>
-
-			{response !== null ? response.message : <></>}
-			{/* Добавить подсказки для полей ввода */}
-			<MyInput
-			value={apiInput}
-			onChange={e => {setApiInput(e.target.value)}}
-			placeholder="API"
-			>
-			</MyInput>
-			<MyInput
-			value={emailInput}
-			onChange={e => {setEmailInput(e.target.value)}}
-			placeholder="Email"
-			>
-			</MyInput>
-			<MyInput
-			value={nameInput}
-			onChange={e => {setNameInput(e.target.value)}}
-			placeholder="Name"
-			>
-			</MyInput>
-			<MyButton
-			onClick={async () => {
-				const response = await PostService.updateProfileData({api: apiInput, email: emailInput, name: nameInput})
-				dispatch(updateProfile({api: apiInput, email: emailInput, name: nameInput}))
-				setResponse(response)
-			}}
-			>
-			Save
-			</MyButton>
-			<MyButton onClick={logout}>Logout</MyButton>
+		<div className='profile'>
+			<div className='profile_content'>
+				<h1>User data</h1>
+				{response !== null ? response.message : <></>}
+				<MyInput
+				value={nameInput}
+				onChange={e => {setNameInput(e.target.value)}}
+				placeholder="Name"
+				>
+				</MyInput>
+				<MyInput
+				value={emailInput}
+				onChange={e => {setEmailInput(e.target.value)}}
+				placeholder="Email"
+				>
+				</MyInput>
+				<MyInput
+				value={apiInput}
+				onChange={e => {setApiInput(e.target.value)}}
+				placeholder="API"
+				>
+				</MyInput>
+				<div className='button_container'>
+					<MyButton
+					onClick={async () => {
+						const response = await PostService.updateProfileData({api: apiInput, email: emailInput, name: nameInput})
+						dispatch(updateProfile({api: apiInput, email: emailInput, name: nameInput}))
+						setResponse(response)
+					}}
+					>
+					Save
+					</MyButton>
+					<MyButton
+						onClick={logout}
+					>
+						Logout
+					</MyButton>
+				</div>
+			</div>
 		</div>
 	);
 };
