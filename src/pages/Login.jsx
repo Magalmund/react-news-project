@@ -4,9 +4,9 @@ import MyButton from '../components/UI/button/MyButton';
 import MyInput from '../components/UI/input/MyInput';
 import '../styles/Login.css'; 
 import { AuthContext } from '../context';
-import { addApiAction } from '../store/apiReducer';
-import { addEmailAction } from '../store/emailReducer';
-import { updateProfile } from '../store/profileReducer';
+import { addApiAction } from '../storeRedux/apiReducer';
+import { addEmailAction } from '../storeRedux/emailReducer';
+import { updateProfile } from '../storeRedux/profileReducer';
 
 const Login = () => {
 	const {isAuth, setIsAuth} = useContext(AuthContext);
@@ -49,7 +49,9 @@ const Login = () => {
 						placeholder="API key"
 					>
 					</MyInput>
-					<MyButton disabled={!emailInput && !apiInput} onClick={() => addUserData()}>Enter</MyButton>
+					<MyButton disabled={!emailInput || !apiInput} onClick={() => {
+						addUserData()
+					}}>Enter</MyButton>
 				</form>
 			</div>
 		</div>

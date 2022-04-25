@@ -5,7 +5,7 @@ import PostService from '../API/PostService';
 import PostFilter from '../components/PostFilter/PostFilter';
 import {useFetching} from "../hooks/useFetching";
 import { useDispatch, useSelector } from 'react-redux';
-import { postsDataUpdate } from '../store/postReducer';
+import { postsDataUpdate } from '../storeRedux/postReducer';
 import '../styles/Posts.css'
 
 function Posts() {

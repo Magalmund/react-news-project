@@ -2,7 +2,7 @@ import React from 'react';
 import MyButton from '../UI/button/MyButton';
 import {useNavigate} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { postsDataUpdate } from '../../store/postReducer';
+import { postsDataUpdate } from '../../storeRedux/postReducer';
 import '../PostItem/PostItem.css'
 
 const PostItem = (props) => {

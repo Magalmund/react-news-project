@@ -4,13 +4,22 @@ import PostService from '../API/PostService';
 import MyButton from '../components/UI/button/MyButton';
 import MyInput from '../components/UI/input/MyInput';
 import { AuthContext } from '../context';
-import { updateProfile } from '../store/profileReducer';
+import { updateProfile } from '../storeRedux/profileReducer';
+import { clearPostData } from '../storeRedux/postReducer';
+import { clearApiAction } from '../storeRedux/apiReducer';
+import { clearEmailAction } from '../storeRedux/emailReducer';
+import { clearProfile } from '../storeRedux/profileReducer';
 import "../styles/Profile.css"
 
 const Profile = () => {
 	const {isAuth, setIsAuth} = useContext(AuthContext);
+	const dispatch = useDispatch()
 	const logout = () => {
 		setIsAuth(false);
+		dispatch(clearPostData())
+		dispatch(clearApiAction())
+		dispatch(clearEmailAction())
+		dispatch(clearProfile())
 		localStorage.removeItem('auth')
 	}
 
@@ -19,7 +28,6 @@ const Profile = () => {
 	const [emailInput, setEmailInput] = useState(email)
 	const [nameInput, setNameInput] = useState(name)
 	const [response, setResponse] = useState(null)
-	const dispatch = useDispatch()
 
 	return (
 		<div className='profile'>

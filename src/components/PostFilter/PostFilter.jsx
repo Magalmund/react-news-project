@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PostService from '../../API/PostService';
-import { postsDataUpdate } from '../../store/postReducer';
+import { postsDataUpdate } from '../../storeRedux/postReducer';
 import MyButton from '../UI/button/MyButton';
 import MyInput from "../UI/input/MyInput"
 import '../PostFilter/PostFilter.css'
